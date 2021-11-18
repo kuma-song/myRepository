@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>CSSについて</title>
+  <meta name="description" content="HTML5についての解説サイトです。">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+  <div id="wrap">
+
+    <header>
+      <div class="flex">
+        <div id="logo"></div>
+        <h1>HTML5について</h1>    
+      </div>
+    <nav>
+      <ul>
+        <li><a href="../index.html">ホーム</a></li>
+        <li><a href="html.html">HTML</a></li>
+        <li id="current_page"><a href="html/css.html">CSS</a></li>
+        <li><a href="javascript.html">JavaScript</a></li>
+        <li><a href="contact.html">コンタクト</a></li>
+      </ul>
+    </nav>
+  </header>
+
+    <main>
+      <h2>CSS</h2>
+      <p>サンプル集</p>
+
+      <section>
+        <h3>第10回 デザインを豊かにするCSS3</h3>
+        <br>
+        <h4>影</h4>
+        <div class="flex">
+          <div class="box" id="shadow-left-top"><p>左上</p></div>
+          <div class="box" id="shadow-right-bottom"><p>右下</p></div>
+          <div class="box" id="shadow-inset"><p>内側</p></div>
+          <div class="box"><p id="shadow-text">文字の影</p></div>
+        </div>
+        <h4>角を丸く</h4>
+        <div class="flex">
+          <div class="box" id="radius-4-corner">４つ角</div>
+          <div class="box" id="radius-circle">円</div>
+          <div class="box" id="radius-yokotate">横縦</div>
+          <div class="box" id="radius-circle-shadow">円と影</div>
+        </div>
+        <h4>グラデーション</h4>
+        <div class="flex">
+          <div class="box" id="liner-gradient">線形</div>
+          <div class="box" id="liner-gradient-90deg">線形90deg</div>
+          <div class="box" id="radial-gradient">円形</div>
+        </div>
+        <h4>鏡面反射</h4>
+          <div class="flex">
+            <div class="box" id="reflect">反射</div>
+        </div>
+      </section>
+
+      <section>
+        <h3>第11回 コンテンツを変形するCSS3</h3>
+        <br>
+        <h4>回転</h4>
+        <div class="flex">
+          <div class="box" id="transform-rotate">回転</div>
+          <div class="box" id="transform-rotate-right-bottom">右下</div>
+        </div>
+        <h4>伸縮</h4>
+        <div class="flex">
+          <div class="box" id="scale">伸縮</div>
+          <div class="box" id="scale-fadeout">フェード</div>
+          <div class="box" id="scale-hanten">反転</div>
+        </div>
+        <h4>移動</h4>
+        <div class="flex">
+          <div class="box" id="translate">移動</div>
+          <div class="box" id="translate-gosei">合成</div>
+        </div>
+      </section>
+
+      <section>
+        <h3>第12回 アニメーションのCSS3</h3>
+        <br>
+        <h4>アニメーション</h4>
+        <div class="flex">
+          <div class="box" id="animation-text-color">文字色</div>
+          <div class="box" id="animation-background-color">背景色</div>
+          <div class="box" id="animation-rotate">回転</div>
+        </div>
+        <h4>３次元</h4>
+        <div class="flex _3d">
+          <div class="box" id="_3d-rotate">回転</div>
+        </div>
+        <div class="parent">
+          <div id="cube">
+            <div class="box" id="cube1">1</div>
+            <div class="box" id="cube2">2</div>
+            <div class="box" id="cube3">3</div>
+            <div class="box" id="cube4">4</div>
+            <div class="box" id="cube5">5</div>
+            <div class="box" id="cube6">6</div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <p><small>(C)2021 Kumazaki Ikki</small></p>
+    </footer>
+
+  </div>
+</body>
+
+</html>

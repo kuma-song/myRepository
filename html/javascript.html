@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScriptについて</title>
+  <meta name="description" content="HTML5についての解説サイトです。">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div id="wrap">
+
+    <header>
+      <div class="flex">
+        <div id="logo"></div>
+        <h1>HTML5について</h1>    
+      </div>
+    <nav>
+      <ul>
+        <li><a href="../index.html">ホーム</a></li>
+        <li><a href="html.html">HTML</a></li>
+        <li><a href="css.html">CSS</a></li>
+        <li id="current_page"><a href="html/javascript.html">JavaScript</a></li>
+        <li><a href="contact.html">コンタクト</a></li>
+      </ul>
+    </nav>
+    </header>
+
+    <main>
+      <h2>JavaScript</h2>
+      <p>サンプル集</p>
+      <section>
+        <h3>計算機</h3>
+        <p>
+          <input type="text" id="num1">
+          <input type="text" id="num2">
+          <button onclick="cal();">足し算</button>
+        </p>
+        <p id="ans" style="background-color: lightgray;">計算結果</p>
+      </section>
+
+      <section>
+        <h3>タイマー</h3>
+        <p>setIntervalを使用</p>
+        <div class="timer">
+          <p>
+            <input type="number" id="hour" min="0" value="0">hr
+            <input type="number" id="min"  min="0" value="0">min
+            <input type="number" id="sec"  min="0" value="5">sec
+          </p>
+          <button onclick="timer();">Start</button>
+          <button onclick="timer_stop();">Stop</button>
+          <p id="clock">0:00:00</p>
+        </div>
+      </section>
+
+    </main>
+    <footer>
+      <p><small>(C)2021 Kumazaki Ikki</small></p>
+    </footer>
+  </div>
+  
+  <script>
+    // idによる要素取得
+    function $id(id){
+    return document.getElementById(id);
+    }
+
+    // 計算機
+    function cal(){
+      var num1=$id("num1");
+      var num2=$id("num2");
+      var ans=$id("ans");
+      var total=parseFloat(num1.value)+parseFloat(num2.value);  // 文字列を数値に変換して加算
+      ans.innerHTML=total;
+    }
+
+    // timer
+    var nIntervId;
+    var time;
+
+    function timer(){
+      var clock = $id("clock");
+      var hour = Number($id("hour").value);
+      var min = Number($id("min").value);
+      var sec = Number($id("sec").value);
+      
+      timer_stop();
+
+      // style 初期化
+      clock.style.color = "yellow";
+      clock.style.backgroundColor = "black";
+
+      // 秒数変換
+      time = hour*60*60 + min*60 + sec;
+      console.log(time);
+      hour = parseInt(time/(60*60), 10);
+      min = parseInt((time-hour*3600)/60, 10);
+      sec = time % 60;
+      min = ("0" + min).slice(-2);
+      sec = ("0" + sec).slice(-2);
+      clock.innerHTML = hour + ":" + min + ":" + sec;
+
+      nIntervId = setInterval(count, 1000); // 1000msec毎にcount()を繰り返し
+    }
+    function count(){
+      var min,sec;
+      
+      time--;
+      if(time > 0){
+        // カウントダウン
+        hour = parseInt(time/(60*60), 10);
+        min = parseInt((time-hour*3600)/60, 10);
+        sec = time % 60;
+        min = ("0" + min).slice(-2);
+        sec = ("0" + sec).slice(-2);
+        clock.innerHTML = hour + ":" + min + ":" + sec;
+      }else{
+        // 0秒でストップ
+        clearInterval(nIntervId);
+        clock.style.color = "white";
+        clock.style.backgroundColor = "red";
+        clock.innerHTML = "0:00:00";
+      }
+    }
+    // Stop
+    function timer_stop(){
+      var clock = $id("clock");
+      
+      clearInterval(nIntervId);
+      clock.style.color = "black";
+      clock.style.backgroundColor = "#ccc";
+      clock.innerHTML = "0:00:00";
+      console.log(nIntervId);
+    }
+
+  </script>
+
+</body>
+</html>
